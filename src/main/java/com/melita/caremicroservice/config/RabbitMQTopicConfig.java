@@ -17,16 +17,8 @@ public class RabbitMQTopicConfig {
     @Value("${rabbitmq.topic.order}")
     private String orderTopic;
 
-    @Value("${rabbitmq.queue.fulfilment}")
-    private String fulfilmentQueue;
-
     @Value("${rabbitmq.queue.care}")
     private String careQueue;
-
-    @Bean
-    public Queue fulfilmentQueue() {
-        return new Queue(fulfilmentQueue, true);
-    }
 
     @Bean
     public Queue careQueue() {
@@ -41,10 +33,5 @@ public class RabbitMQTopicConfig {
     @Bean
     public Binding careQueueBinding(Queue careQueue, TopicExchange topicExchange) {
         return BindingBuilder.bind(careQueue).to(topicExchange).with(orderTopic);
-    }
-
-    @Bean
-    public Binding fulfilmentQueueBinding(Queue fulfilmentQueue, TopicExchange topicExchange) {
-        return BindingBuilder.bind(fulfilmentQueue).to(topicExchange).with(orderTopic);
     }
 }
