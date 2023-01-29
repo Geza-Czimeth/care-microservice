@@ -1,4 +1,4 @@
-# Melita microservice
+# Melita's Care systems microservice
 
 ### Configuration
 
@@ -35,3 +35,6 @@ Tested locally with "java 18.0.2 2022-07-19"
 ### Run from Ide
 Main class is CareMicroserviceApplication.
 Just run it as it is.
+
+### Expected behaviour
+Loads 'Order' message from queue service and logs it. 
