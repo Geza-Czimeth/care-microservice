@@ -1,4 +1,4 @@
-# Melita Care microservice
+# Melita's Care systems microservice
 
 ### Configuration
 
@@ -37,4 +37,4 @@ Main class is CareMicroserviceApplication.
 Just run it as it is.
 
 ### Expected behaviour
-Loads from order message from queue service and logs it. 
+Loads 'Order' message from queue service and logs it. 
